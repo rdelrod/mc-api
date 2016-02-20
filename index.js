@@ -26,6 +26,38 @@ let M = new mfcd('http://127.0.0.1:3000', 'fb69b9f1-87bc-47b4-9740-bed3ad5efc35'
 app.use(bodyP.json());
 app.use(morgan('dev'));
 
+// check the authentication
+function checkAuth(req, res, next) {
+  let apikey = req.get('Authentication').replace('Basic ', '');
+  let authparsed = apikey.split(':');
+  let accessToken = authparsed[0];
+  let accessTokenSecret = authparsed[1];
+
+  let success = false;
+
+  if(config.authentication !== undefined) {
+    let isAuthenticated = config.authentication.filter(function(o) {
+      if(o.accessToken === accessToken && o.accessTokenSecret === accessTokenSecret) {
+        return o;
+      }
+    })[0];
+
+    if(isAuthenticated !== undefined) {
+      success = true;
+    }
+  }
+
+  if(success) {
+    next();
+  } else {
+    console.log('[mcf-api] authentication failure')
+    return res.send({
+      success: false,
+      reason: 'INVALIDAUTH'
+    });
+  }
+}
+
 /**
  * GET /server/status
  *
@@ -49,7 +81,7 @@ app.get('/server/status', function(req, res) {
  *
  * Stop the server.
  **/
-app.get('/server/stop', function(req, res) {
+app.get('/server/stop', checkAuth, function(req, res) {
   let start = Date.now();
 
   M.sendCommand('stop', function(resp) {
@@ -66,9 +98,9 @@ app.get('/server/stop', function(req, res) {
  *
  * Start the server.
  **/
-app.get('/server/start', function(req, res) {
+app.get('/server/start', checkAuth, function(req, res) {
   let start = Date.now();
-  
+
   M.startServer(function(err) {
     let lat = Date.now() - start;
     res.send({
