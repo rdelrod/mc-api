@@ -4,5 +4,9 @@
       "accessToken": "valid access token",
       "accessTokenSecret": "valid access token secret in pair"
     }
-  ]
+  ],
+  "mcfd": {
+    "uri": "url here",
+    "password": "key here"
+  }
 }

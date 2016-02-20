@@ -20,7 +20,7 @@ const bodyP   = require('body-parser'),
       morgan  = require('morgan');
 
 let app = express();
-let M = new mfcd('http://127.0.0.1:3000', 'fb69b9f1-87bc-47b4-9740-bed3ad5efc35')
+let M = new mfcd(config.mcfd.uri, config.mcfd.password);
 
 // express middleware
 app.use(bodyP.json());
