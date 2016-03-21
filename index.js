@@ -31,6 +31,7 @@ let M = new mfcd(config.mcfd.uri, config.mcfd.password);
 // express middleware
 app.use(bodyP.json());
 app.use(morgan('dev'));
+app.use(pmx.expressErrorHandler()); // pmx express error reporting!
 
 // check the authentication
 function checkAuth(req, res, next) {
