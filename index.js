@@ -12,6 +12,12 @@
 const config = require('./config/config.json');
 
 // node.js libs
+let   pmx     = require('pmx');
+pmx.init({
+  http: true,
+  network: true
+});
+
 const express = require('express'),
       mfcd    = require('./lib/mfcd.js');
 
