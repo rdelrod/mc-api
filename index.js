@@ -9,7 +9,7 @@
 'use strict';
 
 // program specific
-const config = require('./config/config.json');
+const config  = require('./config/config.json');
 
 // node.js libs
 let   pmx     = require('pmx');
