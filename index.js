@@ -184,4 +184,5 @@ app.get('/server/sendCommand/:command', checkAuth, function(req, res) {
   });
 });
 
+// listen on the port specified by config
 app.listen(config.port);
