@@ -55,7 +55,10 @@ function checkAuth(req, res, next) {
       if(o.accessToken === accessToken && o.accessTokenSecret === accessTokenSecret) {
         return o;
       }
-    })[0];
+    });
+
+    // We only care about result 0.
+    isAuthenticated = isAuthenticated[0];
 
     // if we didn't find the token, it's not authenticated.
     if(isAuthenticated !== undefined) {
