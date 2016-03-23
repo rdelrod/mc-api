@@ -65,3 +65,29 @@ Without Authentication:
 **Authenticated**
 
 Force kills the server thread. (`kill -9 <pid>`)
+
+**GET** - `/server/sendCommand/:command`
+
+**Authenticated** / **Deprecated**
+
+Send a command to the server.
+
+**POST** - `/server/sendCommand`
+
+**Authenticated**
+
+Body:
+
+```json
+{
+  "command": "command"
+}
+```
+
+Result:
+
+```json
+{
+  ""
+}
+```
