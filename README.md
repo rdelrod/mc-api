@@ -91,3 +91,9 @@ Result:
   ""
 }
 ```
+
+## Authentication
+
+Header: **Authentication**
+
+Format: `Token:TokenSecret`
