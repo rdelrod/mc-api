@@ -2,7 +2,7 @@
  * REST API with simple authentication to manage a minecraft server.
  *
  * @author Jared Allard <jaredallard@outlook.com>
- * @version 1.1.0
+ * @version 1.1.0.
  * @license MIT
  **/
 
