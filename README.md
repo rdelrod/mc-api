@@ -1,5 +1,7 @@
 # mc-api
 
+[![Code Climate](https://codeclimate.com/github/rdelrod/mc-api/badges/gpa.svg)](https://codeclimate.com/github/rdelrod/mc-api)
+
 A simple express REST API to interact with [mcfd](https://github.com/rdelrod/mcfd)
 
 
