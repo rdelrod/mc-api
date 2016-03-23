@@ -12,9 +12,9 @@ Returns the status of the server.
 
 ```json
 {
-  "latency":9,
-  "success":true,
-  "status":"up"
+  "latency": 9,
+  "success": true,
+  "status":  "up"
 }
 ```
 
@@ -25,15 +25,17 @@ Returns the status of the server.
 Starts the server.
 
 ```json
-
+{
+  ""
+}
 ```
 
 Without Authentication:
 
 ```json
 {
-  "success":false,
-  "reason":"NOAUTH"
+  "success": false,
+  "reason":  "NOAUTH"
 }
 ```
 
@@ -53,7 +55,7 @@ Without Authentication:
 
 ```json
 {
-  "success":false,
-  "reason":"NOAUTH"
+  "success": false,
+  "reason":  "NOAUTH"
 }
 ```
