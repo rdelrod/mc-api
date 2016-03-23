@@ -10,19 +10,15 @@
 
 // program specific
 const config  = require('./config/config.json');
-
-// node.js libs
 let   pmx     = require('pmx');
 pmx.init({
   http: true,
   network: true
 });
 
-// out external libs
 const express = require('express'),
       mfcd    = require('./lib/mfcd.js');
 
-// middleware
 const bodyP   = require('body-parser'),
       morgan  = require('morgan');
 
