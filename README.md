@@ -59,3 +59,9 @@ Without Authentication:
   "reason":  "NOAUTH"
 }
 ```
+
+**GET** - `/server/forceKill`
+
+**Authenticated**
+
+Force kills the server thread. (`kill -9 <pid>`)
