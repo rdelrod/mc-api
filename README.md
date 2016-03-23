@@ -97,3 +97,7 @@ Result:
 Header: **Authentication**
 
 Format: `Token:TokenSecret`
+
+## License
+
+MIT
