@@ -20,6 +20,7 @@ const express = require('express'),
       mfcd    = require('./lib/mfcd.js');
 
 const bodyP   = require('body-parser'),
+      cors    = require('cors'),
       morgan  = require('morgan');
 
 // instance express & mcfd
@@ -28,6 +29,7 @@ let M = new mfcd(config.mcfd.uri, config.mcfd.password);
 
 // express middleware
 app.use(bodyP.json());
+app.use(cors());
 app.use(morgan('dev'));
 app.use(pmx.expressErrorHandler()); // pmx express error reporting!
 
