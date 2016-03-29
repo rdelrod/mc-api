@@ -100,6 +100,18 @@ app.get('/server/status', function(req, res) {
 });
 
 /**
+ * Start a Two Factor Auth request.
+ **/
+app.get('/auth/tfa/:user', function(req, res) {
+  let start = Date.now();
+
+  res.send({
+    latency: 0,
+    success: false
+  });
+});
+
+/**
  * GET /server/stop
  *
  * Stop the server.
